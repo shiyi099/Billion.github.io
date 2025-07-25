@@ -8,13 +8,7 @@ title: Publications
 
 ## Journal Paper
 
-- [Audio Matters Too! Enhancing Markerless Motion Capture with Audio Signals for String Performance Capture](https://dl.acm.org/doi/abs/10.1145/3658235)<br>
-  
-  <img title="" src="https://shiyi099.github.io/Billion.github.io/images/publications/SPD.jpg" alt="" data-align="inline"><br>
-  
-  Yitong Jin$^\ast$, Zhiping Qiu$^\ast$, **Yi Shi**, Shuangpeng Sun, Chongwu Wang, Donghao Pan, Jiachen Zhao, Zhenghao Liang, Yuan Wang, Xiaobing Li, Feng Yu, Tao Yu$^\dag$, Qionghai Dai$^\dag$<br>
-  
-  Submitted to ACM Transactions on Graphics (TOG), Volume 43, Issue 4.<br>
+- [Audio Matters Too! Enhancing Markerless Motion Capture with Audio Signals for String Performance Capture](https://dl.acm.org/doi/abs/10.1145/3658235)<br><img title="" src="https://shiyi099.github.io/Billion.github.io/images/publications/SPD.jpg" alt="" data-align="inline">Yitong Jin$^\ast$, Zhiping Qiu$^\ast$, **Yi Shi**, Shuangpeng Sun, Chongwu Wang, Donghao Pan, Jiachen Zhao, Zhenghao Liang, Yuan Wang, Xiaobing Li, Feng Yu, Tao Yu$^\dag$, Qionghai Dai$^\dag$<br>Submitted to ACM Transactions on Graphics (TOG), Volume 43, Issue 4.<br>
 
 ## Conference Paper
 
