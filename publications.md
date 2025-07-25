@@ -4,7 +4,7 @@ permalink: /publications/index.html
 title: Publications
 ---
 
-> ( ${*}$: equal contribution,  $\dag$: corresponding author )
+> ( $^\ast$: equal contribution,  $^\dag$: corresponding author )
 
 ## Journal Paper
 
@@ -12,7 +12,7 @@ title: Publications
   
   <img title="" src="https://shiyi099.github.io/Billion.github.io/images/publications/SPD.jpg" alt="" data-align="inline"><br>
   
-  Yitong Jin$^{*}$, Zhiping Qiu$^{*}$, **Yi Shi**, Shuangpeng Sun, Chongwu Wang, Donghao Pan, Jiachen Zhao, Zhenghao Liang, Yuan Wang, Xiaobing Li, Feng Yu, Tao Yu$^\dag$, Qionghai Dai$^\dag$<br>
+  Yitong Jin$^\ast$, Zhiping Qiu$^\ast$, **Yi Shi**, Shuangpeng Sun, Chongwu Wang, Donghao Pan, Jiachen Zhao, Zhenghao Liang, Yuan Wang, Xiaobing Li, Feng Yu, Tao Yu$^\dag$, Qionghai Dai$^\dag$<br>
   
   Submitted to ACM Transactions on Graphics (TOG), Volume 43, Issue 4.<br>
 
