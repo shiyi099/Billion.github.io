@@ -7,7 +7,7 @@ description: Two roads diverged in woods, I took the one less traveled by.  # St
 
 # TIP ── For local development you can comment out `url`
 # and build with relative paths. In production you want this set.
-url: https://shiyi099.github.io//Billion.github.io
+url: https://shiyi099.github.io/Billion.github.io
 
 # --------------------------------------------------
 #  AUTHOR / PROFILE DATA
@@ -50,16 +50,16 @@ google_verify: "SkiyuGpJOKT74vv5GmXLvYXXDkXy4v8VWPtbelYz3Hs"
 links:
   - title: About Me
     url: /
-  #- title: Publications
-    #url: /publications/
+  - title: Publications
+    url: /publications/
   - title: Awards
     url: /awards/
   #- title: Hobbies
     #url: /hobbies/
   #- title: Blogs
     #url: /blogs/
-  #- title: 中文
-    #url: /cn/
+  - title: 中文
+    url: /cn/
 
 
 # --------------------------------------------------
