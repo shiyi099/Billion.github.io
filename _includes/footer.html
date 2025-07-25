@@ -9,4 +9,28 @@
 </h6>
 
 
+<!-- KaTeX Auto-render -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        // 配置选项
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\[", right: "\\]", display: true}
+        ],
+        throwOnError: false,
+        errorColor: '#cc0000',
+        macros: {
+            "\\RR": "\\mathbb{R}",
+            "\\NN": "\\mathbb{N}",
+            "\\ZZ": "\\mathbb{Z}",
+            "\\QQ": "\\mathbb{Q}",
+            "\\CC": "\\mathbb{C}"
+        }
+    });
+});
+</script>
+
 <!-- Lastly modified by Hanlin CAI in 2023/03/16 -->
