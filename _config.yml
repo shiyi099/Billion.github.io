@@ -41,10 +41,6 @@ owner:
 #google_verify: "SkiyuGpJOKT74vv5GmXLvYXXDkXy4v8VWPtbelYz3Hs"
 # bing_verify: ""    # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 google_analytics: "G-YR5VB9NNV8"                                 # GA-4 property ID
-ga_measurement_protocol:
-  stream_name: "homepage stream display"                         # GA4 Stream Name
-  api_secret: "Rj6_lYh7SXalpCf48fJY9w"                          # Measurement Protocol API Secret
-  measurement_id: "G-YR5VB9NNV8"                                 # GA4 Measurement ID
 
 # IP地理位置服务配置
 ipinfo:
