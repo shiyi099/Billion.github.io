@@ -22,19 +22,23 @@ class GAMeasurementAPI {
         };
 
         try {
-            const response = await fetch(this.endpoint, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(eventData)
-            });
-            
-            if (response.ok) {
-                console.log('GA Measurement Protocol: Page view sent successfully');
-                this.updateLocalStats();
+            // 使用navigator.sendBeacon避免CORS问题
+            if (navigator.sendBeacon) {
+                const blob = new Blob([JSON.stringify(eventData)], {
+                    type: 'application/json'
+                });
+                const success = navigator.sendBeacon(this.endpoint, blob);
+                
+                if (success) {
+                    console.log('GA Measurement Protocol: Page view sent successfully via sendBeacon');
+                    this.updateLocalStats();
+                } else {
+                    console.warn('GA Measurement Protocol: sendBeacon failed, falling back to fetch');
+                    await this.sendWithFetch(eventData);
+                }
             } else {
-                console.error('GA Measurement Protocol: Failed to send page view');
+                // 降级到fetch
+                await this.sendWithFetch(eventData);
             }
         } catch (error) {
             console.error('GA Measurement Protocol: Error sending data', error);
@@ -79,6 +83,30 @@ class GAMeasurementAPI {
         }
     }
 
+    // 使用fetch发送数据（降级方法）
+    async sendWithFetch(eventData) {
+        try {
+            const response = await fetch(this.endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(eventData)
+            });
+            
+            if (response.ok) {
+                console.log('GA Measurement Protocol: Data sent successfully via fetch');
+                return true;
+            } else {
+                console.error('GA Measurement Protocol: Failed to send data via fetch');
+                return false;
+            }
+        } catch (error) {
+            console.error('GA Measurement Protocol: Error sending data via fetch', error);
+            return false;
+        }
+    }
+
     // 发送自定义事件
     async sendCustomEvent(eventName, parameters = {}) {
         const eventData = {
@@ -90,18 +118,22 @@ class GAMeasurementAPI {
         };
 
         try {
-            const response = await fetch(this.endpoint, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(eventData)
-            });
-            
-            if (response.ok) {
-                console.log(`GA Measurement Protocol: Custom event '${eventName}' sent successfully`);
+            // 使用navigator.sendBeacon避免CORS问题
+            if (navigator.sendBeacon) {
+                const blob = new Blob([JSON.stringify(eventData)], {
+                    type: 'application/json'
+                });
+                const success = navigator.sendBeacon(this.endpoint, blob);
+                
+                if (success) {
+                    console.log(`GA Measurement Protocol: Custom event '${eventName}' sent successfully via sendBeacon`);
+                } else {
+                    console.warn(`GA Measurement Protocol: sendBeacon failed for '${eventName}', falling back to fetch`);
+                    await this.sendWithFetch(eventData);
+                }
             } else {
-                console.error(`GA Measurement Protocol: Failed to send event '${eventName}'`);
+                // 降级到fetch
+                await this.sendWithFetch(eventData);
             }
         } catch (error) {
             console.error('GA Measurement Protocol: Error sending custom event', error);
@@ -112,16 +144,47 @@ class GAMeasurementAPI {
 // 初始化GA Measurement API
 document.addEventListener('DOMContentLoaded', function() {
     // 从Jekyll配置中获取GA设置
+    let measurementId = '{{ site.ga_measurement_protocol.measurement_id }}';
+    let apiSecret = '{{ site.ga_measurement_protocol.api_secret }}';
+    let streamName = '{{ site.ga_measurement_protocol.stream_name }}';
+    
+    // 检查Jekyll模板变量是否被正确处理
+    if (measurementId === '{{ site.ga_measurement_protocol.measurement_id }}' || 
+        apiSecret === '{{ site.ga_measurement_protocol.api_secret }}') {
+        console.info('GA Measurement Protocol: Jekyll template variables not processed, trying alternative methods...');
+        
+        // 尝试从全局变量获取配置
+        if (window.GA_CONFIG) {
+            measurementId = window.GA_CONFIG.measurement_id;
+            apiSecret = window.GA_CONFIG.api_secret;
+            streamName = window.GA_CONFIG.stream_name;
+            console.info('✅ GA Measurement Protocol: Using configuration from global variable');
+        }
+    } else {
+        console.info('✅ GA Measurement Protocol: Using configuration from Jekyll');
+    }
+    
+    // 验证配置是否有效
+    if (!measurementId || !apiSecret || measurementId.length < 10 || apiSecret.length < 10) {
+        console.warn('GA Measurement Protocol: Invalid configuration, skipping GA API initialization');
+        console.log('Measurement ID:', measurementId);
+        console.log('API Secret length:', apiSecret ? apiSecret.length : 0);
+        return;
+    }
+    
     const gaConfig = {
-        measurement_id: '{{ site.ga_measurement_protocol.measurement_id }}',
-        api_secret: '{{ site.ga_measurement_protocol.api_secret }}',
-        stream_name: '{{ site.ga_measurement_protocol.stream_name }}'
+        measurement_id: measurementId,
+        api_secret: apiSecret,
+        stream_name: streamName
     };
 
-    if (gaConfig.measurement_id && gaConfig.api_secret) {
+    try {
         const gaAPI = new GAMeasurementAPI(gaConfig);
         
-        // 发送页面浏览事件
+        // 将实例保存到全局变量，供测试使用
+        window.gaAPI = gaAPI;
+        
+        // 发送页面浏览事件（使用navigator.sendBeacon避免CORS问题）
         gaAPI.sendPageView(document.title, window.location.href);
         
         // 监听页面可见性变化
@@ -142,5 +205,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 engagement_time_msec: Date.now() - performance.timing.navigationStart
             });
         });
+        
+        console.log('GA Measurement Protocol: Initialized successfully');
+    } catch (error) {
+        console.error('GA Measurement Protocol: Initialization failed', error);
     }
 }); 
