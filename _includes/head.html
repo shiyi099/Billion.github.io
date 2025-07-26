@@ -54,6 +54,11 @@
 <!-- Custom CSS -->
 <link rel="stylesheet" href="{{ site.url }}/assets/css/custom.css">
 
+<!-- Google Analytics Measurement Protocol API -->
+{% if site.ga_measurement_protocol %}
+<script src="{{ site.url }}/assets/js/ga-measurement-api.js"></script>
+{% endif %}
+
 <meta http-equiv="cleartype" content="on">
 
 <!-- Load Modernizr -->
