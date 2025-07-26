@@ -111,4 +111,196 @@ a:hover .bio-photo {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
     transition: all 0.3s ease;
+}
+
+/* 访客分析区域样式 */
+.visitor-analytics-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+    border: 1px solid #e1e8ed;
+}
+
+/* 访客统计显示 */
+.visitor-stats-display {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    color: white;
+}
+
+.visitor-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.visitor-stats .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 120px;
+    justify-content: center;
+}
+
+.visitor-stats .stat-item i {
+    font-size: 18px;
+    color: #fff;
+}
+
+.visitor-stats .stat-item span {
+    font-weight: 500;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* 位置信息显示 */
+.location-display {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 8px;
+    color: #333;
+}
+
+.location-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 150px;
+    justify-content: center;
+}
+
+.location-item i {
+    font-size: 16px;
+    color: #667eea;
+}
+
+.location-item span {
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+/* 地图区域样式 */
+.map-section {
+    margin-bottom: 20px;
+}
+
+.map-section h4 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.visitor-map-container {
+    height: 300px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e1e8ed;
+}
+
+/* 地图控制按钮 */
+.map-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.map-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.map-btn.clear-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+.map-btn i {
+    font-size: 16px;
+}
+
+/* 访客弹窗样式 */
+.visitor-popup {
+    padding: 10px;
+    min-width: 200px;
+}
+
+.visitor-popup h4 {
+    margin: 0 0 10px 0;
+    color: #667eea;
+    font-size: 16px;
+}
+
+.visitor-popup p {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.visitor-popup strong {
+    color: #333;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .visitor-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .location-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .map-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .visitor-map-container {
+        height: 250px;
+    }
 } 
