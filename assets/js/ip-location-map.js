@@ -110,10 +110,9 @@ class IPLocationMap {
         try {
             this.map = L.map('visitor-map').setView([0, 0], 2);
             
-            // 使用深色主题的地图瓦片
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-                attribution: '© OpenStreetMap contributors, © CARTO',
-                subdomains: 'abcd',
+            // 使用彩色地图瓦片
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
                 maxZoom: 19
             }).addTo(this.map);
 
