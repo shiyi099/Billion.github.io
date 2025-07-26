@@ -18,4 +18,8 @@ title: Publications
 
 ## Early Project
 
-- [Securing Billion Bluetooth Devices leveraging Learning-based Techniques](https://ojs.aaai.org/index.php/AAAI/article/view/30544)<br>*Final year project ([thesis](https://caihanlin.com/mypaper/thesis/UG-thesis.pdf)).*<br>**Hanlin Cai** (Advisors: Zhezhuang Xu, Tozammel Hossain)<br>The 38th Annual AAAI Conference on Artificial Intelligence (AAAI 2024), [Undergraduate Consortium](https://aaai.org/aaai-24-conference/undergraduate-consortium-program/).<br>Vancouver, Canada. February, 2024.<br>
+- [Dynamic Supplementary Heat System for Blast Furnace Slag](https://newstest.ncst.edu.cn/col/1393558054724/2020/12/28/1609148866922.html)<br>
+  
+  ![](https://shiyi099.github.io/Billion.github.io/images/publications/ChiLunTechnology.png)
+  
+  **Yi Shi**, Xinghui Hao, etc...
