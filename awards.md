@@ -6,7 +6,7 @@ title: Awards
 
 ## Scholarships
 
-- **China National Scholarship** · May 2025<br>
+- **China National Scholarship** · 2024 <br>
 
 ## Competitions
 
