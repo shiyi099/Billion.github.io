@@ -216,25 +216,30 @@ class IPLocationMap {
 document.addEventListener('DOMContentLoaded', function() {
     // 尝试从Jekyll配置获取token
     let token = '{{ site.ipinfo.token }}';
+    let tokenSource = 'Jekyll config';
     
     // 检查token是否被Jekyll正确处理（不是原始的模板字符串）
     if (token === '{{ site.ipinfo.token }}') {
         // 如果token没有被Jekyll处理，尝试从其他地方获取
-        console.warn('Jekyll template variable not processed, trying alternative methods...');
+        console.info('Jekyll template variable not processed, trying alternative methods...');
         
         // 方法1: 尝试从全局变量获取
         if (window.IPINFO_TOKEN) {
             token = window.IPINFO_TOKEN;
-            console.log('Using token from global variable');
+            tokenSource = 'global variable';
+            console.info('✅ Using token from global variable');
         }
         // 方法2: 尝试从meta标签获取
         else {
             const metaToken = document.querySelector('meta[name="ipinfo-token"]');
             if (metaToken) {
                 token = metaToken.getAttribute('content');
-                console.log('Using token from meta tag');
+                tokenSource = 'meta tag';
+                console.info('✅ Using token from meta tag');
             }
         }
+    } else {
+        console.info('✅ Using token from Jekyll configuration');
     }
     
     const ipinfoConfig = {
@@ -243,13 +248,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 验证token是否有效
     if (token && token !== '{{ site.ipinfo.token }}' && token.length > 10) {
-        console.log('IPinfo token found, initializing map...');
+        console.info(`IPinfo token found (source: ${tokenSource}), initializing map...`);
         setTimeout(() => {
-            window.ipLocationMap = new IPLocationMap(ipinfoConfig);
+            try {
+                window.ipLocationMap = new IPLocationMap(ipinfoConfig);
+                console.info('✅ IPLocationMap initialized successfully');
+            } catch (error) {
+                console.error('❌ Failed to initialize IPLocationMap:', error);
+            }
         }, 500);
     } else {
-        console.error('Invalid or missing IPinfo token. Please check your configuration.');
-        console.log('Token value:', token);
-        console.log('Token length:', token ? token.length : 0);
+        console.warn('⚠️ Invalid or missing IPinfo token. Please check your configuration.');
+        console.info('Token value:', token);
+        console.info('Token length:', token ? token.length : 0);
+        console.info('Available sources:');
+        console.info('- Jekyll config: {{ site.ipinfo.token }}');
+        console.info('- Global variable: window.IPINFO_TOKEN');
+        console.info('- Meta tag: <meta name="ipinfo-token" content="...">');
     }
 }); 
