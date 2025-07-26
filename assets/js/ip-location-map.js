@@ -158,32 +158,27 @@ class IPLocationMap {
                         <i class="icon-location"></i>
                         <span>当前IP: ${this.currentVisitor.ip}</span>
                     </div>
+                    <div class="stat-item">
+                        <i class="icon-map-marker"></i>
+                        <span>位置: ${this.currentVisitor.city}, ${this.currentVisitor.country}</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="icon-clock"></i>
+                        <span>时区: ${this.currentVisitor.timezone || 'Unknown'}</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="icon-building"></i>
+                        <span>组织: ${this.currentVisitor.org || 'Unknown'}</span>
+                    </div>
                 </div>
             `;
         }
     }
 
-    // 更新位置信息
+    // 更新位置信息（简化版本）
     updateLocationInfo() {
-        const locationElement = document.getElementById('current-location');
-        if (locationElement && this.currentVisitor) {
-            locationElement.innerHTML = `
-                <div class="location-info">
-                    <div class="location-item">
-                        <i class="icon-map-marker"></i>
-                        <span>${this.currentVisitor.city}, ${this.currentVisitor.country}</span>
-                    </div>
-                    <div class="location-item">
-                        <i class="icon-clock"></i>
-                        <span>${this.currentVisitor.timezone || 'Unknown'}</span>
-                    </div>
-                    <div class="location-item">
-                        <i class="icon-building"></i>
-                        <span>${this.currentVisitor.org || 'Unknown'}</span>
-                    </div>
-                </div>
-            `;
-        }
+        // 位置信息现在直接显示在访客统计中
+        this.updateVisitorStats();
     }
 
     // 刷新地图
