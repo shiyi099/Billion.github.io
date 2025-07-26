@@ -6,7 +6,7 @@ title: Awards
 
 ## Scholarships
 
-- May 2025：** Scholarship** (totally £190,000 for tuition waiver and stipend)<br>
+- **China National Scholarship** · May 2025<br>
 
 ## Competitions
 
