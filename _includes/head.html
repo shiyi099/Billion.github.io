@@ -65,6 +65,26 @@
 
 <!-- IP地理位置和地图脚本 -->
 {% if site.ipinfo %}
+<!-- 设置全局变量作为Jekyll模板变量的备选方案 -->
+<script>
+    // 设置全局配置变量，当Jekyll模板变量未处理时使用
+    window.IPINFO_TOKEN = '{{ site.ipinfo.token }}';
+    window.GA_CONFIG = {
+        measurement_id: '{{ site.ga_measurement_protocol.measurement_id }}',
+        api_secret: '{{ site.ga_measurement_protocol.api_secret }}',
+        stream_name: '{{ site.ga_measurement_protocol.stream_name }}'
+    };
+    
+    // 添加meta标签作为额外备选方案
+    if (!document.querySelector('meta[name="ipinfo-token"]')) {
+        const metaToken = document.createElement('meta');
+        metaToken.name = 'ipinfo-token';
+        metaToken.content = '{{ site.ipinfo.token }}';
+        document.head.appendChild(metaToken);
+    }
+    
+    console.log('Global configuration variables set from Jekyll template');
+</script>
 <script src="{{ site.url }}/assets/js/ip-location-map.js"></script>
 {% endif %}
 
