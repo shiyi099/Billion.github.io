@@ -46,6 +46,10 @@ ga_measurement_protocol:
   api_secret: "Rj6_lYh7SXalpCf48fJY9w"                          # Measurement Protocol API Secret
   measurement_id: "G-YR5VB9NNV8"                                 # GA4 Measurement ID
 
+# IP地理位置服务配置
+ipinfo:
+  token: "31c103e465bdf8"                                        # IPinfo API Token
+
 
 # --------------------------------------------------
 #  TOP NAVIGATION BAR
