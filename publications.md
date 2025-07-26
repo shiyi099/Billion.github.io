@@ -18,4 +18,4 @@ title: Publications
 
 ## Early Project
 
-- [Dynamic Supplementary Heat System for Blast Furnace Slag](https://newstest.ncst.edu.cn/col/1393558054724/2020/12/28/1609148866922.html)<br><img title="" src="https://shiyi099.github.io/Billion.github.io/images/publications/ChiLunTechnology.png" alt="" data-align="inline">**Yi Shi**, Xinghui Hao<br>
+- [Dynamic Supplementary Heat System for Blast Furnace Slag](https://newstest.ncst.edu.cn/col/1393558054724/2020/12/28/1609148866922.html)<br><img title="" src="https://shiyi099.github.io/Billion.github.io/images/publications/ChiLunTechnology.png" alt="" data-align="inline">**Yi Shi**, Xinghui Hao<br><img title="" src="https://shiyi099.github.io/Billion.github.io/images/publications/ChiLunTechnologyTeaser.jpg" alt="" data-align="inline">
