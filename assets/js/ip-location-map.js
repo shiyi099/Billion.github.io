@@ -1,0 +1,216 @@
+// IP地理位置和Leaflet地图管理脚本
+class IPLocationMap {
+    constructor(config) {
+        this.ipinfoToken = config.token;
+        this.visitorData = this.loadVisitorData();
+        this.map = null;
+        this.markers = [];
+        this.init();
+    }
+
+    // 初始化
+    async init() {
+        await this.getCurrentVisitorInfo();
+        this.initMap();
+        this.updateDisplay();
+    }
+
+    // 获取当前访客信息
+    async getCurrentVisitorInfo() {
+        try {
+            const response = await fetch(`https://ipinfo.io/json?token=${this.ipinfoToken}`);
+            const data = await response.json();
+            
+            const visitorInfo = {
+                ip: data.ip,
+                city: data.city,
+                region: data.region,
+                country: data.country,
+                location: data.loc, // "lat,lng" 格式
+                timezone: data.timezone,
+                org: data.org,
+                timestamp: new Date().toISOString(),
+                visitCount: 1
+            };
+
+            // 检查是否是新访客
+            const existingVisitor = this.visitorData.find(v => v.ip === visitorInfo.ip);
+            if (existingVisitor) {
+                existingVisitor.visitCount++;
+                existingVisitor.lastVisit = visitorInfo.timestamp;
+            } else {
+                this.visitorData.push(visitorInfo);
+            }
+
+            this.saveVisitorData();
+            this.currentVisitor = visitorInfo;
+            
+            console.log('IP Location data:', visitorInfo);
+        } catch (error) {
+            console.error('Error fetching IP location:', error);
+            this.currentVisitor = {
+                ip: 'Unknown',
+                city: 'Unknown',
+                country: 'Unknown',
+                location: '0,0',
+                visitCount: 1
+            };
+        }
+    }
+
+    // 加载访客数据
+    loadVisitorData() {
+        const saved = localStorage.getItem('visitor_locations');
+        return saved ? JSON.parse(saved) : [];
+    }
+
+    // 保存访客数据
+    saveVisitorData() {
+        localStorage.setItem('visitor_locations', JSON.stringify(this.visitorData));
+    }
+
+    // 初始化Leaflet地图
+    initMap() {
+        if (this.map) {
+            this.map.remove();
+        }
+
+        // 创建地图容器
+        const mapContainer = document.getElementById('visitor-map');
+        if (!mapContainer) return;
+
+        // 设置地图容器样式
+        mapContainer.style.height = '300px';
+        mapContainer.style.width = '100%';
+        mapContainer.style.borderRadius = '8px';
+        mapContainer.style.overflow = 'hidden';
+
+        // 初始化地图
+        this.map = L.map('visitor-map').setView([0, 0], 2);
+
+        // 添加OpenStreetMap图层
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(this.map);
+
+        // 添加所有访客标记
+        this.addVisitorMarkers();
+    }
+
+    // 添加访客标记
+    addVisitorMarkers() {
+        // 清除现有标记
+        this.markers.forEach(marker => marker.remove());
+        this.markers = [];
+
+        // 为每个访客添加标记
+        this.visitorData.forEach((visitor, index) => {
+            if (visitor.location && visitor.location !== '0,0') {
+                const [lat, lng] = visitor.location.split(',').map(Number);
+                
+                const marker = L.marker([lat, lng])
+                    .addTo(this.map)
+                    .bindPopup(`
+                        <div class="visitor-popup">
+                            <h4>访客 #${index + 1}</h4>
+                            <p><strong>IP:</strong> ${visitor.ip}</p>
+                            <p><strong>位置:</strong> ${visitor.city}, ${visitor.country}</p>
+                            <p><strong>访问次数:</strong> ${visitor.visitCount}</p>
+                            <p><strong>最后访问:</strong> ${new Date(visitor.timestamp).toLocaleString()}</p>
+                        </div>
+                    `);
+
+                this.markers.push(marker);
+            }
+        });
+
+        // 调整地图视图以显示所有标记
+        if (this.markers.length > 0) {
+            const group = new L.featureGroup(this.markers);
+            this.map.fitBounds(group.getBounds().pad(0.1));
+        }
+    }
+
+    // 更新显示
+    updateDisplay() {
+        this.updateVisitorStats();
+        this.updateLocationInfo();
+    }
+
+    // 更新访客统计
+    updateVisitorStats() {
+        const statsElement = document.getElementById('visitor-stats');
+        if (statsElement && this.currentVisitor) {
+            const totalVisitors = this.visitorData.length;
+            const totalVisits = this.visitorData.reduce((sum, v) => sum + v.visitCount, 0);
+
+            statsElement.innerHTML = `
+                <div class="visitor-stats">
+                    <div class="stat-item">
+                        <i class="icon-users"></i>
+                        <span>总访客: ${totalVisitors}</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="icon-eye"></i>
+                        <span>总访问: ${totalVisits}</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="icon-location"></i>
+                        <span>当前IP: ${this.currentVisitor.ip}</span>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    // 更新位置信息
+    updateLocationInfo() {
+        const locationElement = document.getElementById('current-location');
+        if (locationElement && this.currentVisitor) {
+            locationElement.innerHTML = `
+                <div class="location-info">
+                    <div class="location-item">
+                        <i class="icon-map-marker"></i>
+                        <span>${this.currentVisitor.city}, ${this.currentVisitor.country}</span>
+                    </div>
+                    <div class="location-item">
+                        <i class="icon-clock"></i>
+                        <span>${this.currentVisitor.timezone || 'Unknown'}</span>
+                    </div>
+                    <div class="location-item">
+                        <i class="icon-building"></i>
+                        <span>${this.currentVisitor.org || 'Unknown'}</span>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    // 刷新地图
+    refreshMap() {
+        this.addVisitorMarkers();
+    }
+
+    // 清除所有数据
+    clearData() {
+        this.visitorData = [];
+        this.saveVisitorData();
+        this.refreshMap();
+        this.updateDisplay();
+    }
+}
+
+// 页面加载完成后初始化
+document.addEventListener('DOMContentLoaded', function() {
+    // 从Jekyll配置中获取IPinfo设置
+    const ipinfoConfig = {
+        token: '{{ site.ipinfo.token }}'
+    };
+
+    if (ipinfoConfig.token) {
+        // 延迟初始化，确保DOM完全加载
+        setTimeout(() => {
+            window.ipLocationMap = new IPLocationMap(ipinfoConfig);
+        }, 1000);
+    }
+}); 
