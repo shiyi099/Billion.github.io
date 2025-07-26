@@ -11,8 +11,16 @@ title: Awards
 
 ## Competitions
 
-- Jan 2024：Finalist of China International College Students’ Innovation Competition (Top 3%)
+- July 2025：Honorary Mention in Digital Musics & Sound Art at Prix Ars Electronica 2025
   
-  <iframe width="710" height="399" src="https://www.youtube.com/embed/a0pfoXxqRu0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <img title="" src="https://shiyi099.github.io/Billion.github.io/images/publications/Into the Red.png" alt="" data-align="inline">
+  
+  <iframe width="710" height="400" src="https://www.youtube.com/embed/a0pfoXxqRu0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="710" height="399" src="https://www.youtube.com/embed/a0pfoXxqRu0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+- Dec 2020: First Prize in the 14th iCAN International Innovation and Finalist of China Entrepreneurship Competition (Top 10)
+  <img title="" src="https://shiyi099.github.io/Billion.github.io/images/awards/iCAN2020.jpg" alt="" data-align="inline">
+  
+
+- First Prize & The Most Investment Value Award in the 8th Discovery Cup National Internet Software Contest.
+
+- First Prize in the 8th iPDM Cup Data Mining Challenge.
