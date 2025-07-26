@@ -12,8 +12,7 @@ title: Awards
 ## Competitions
 
 - Jan 2024：Finalist of China International College Students’ Innovation Competition (Top 3%)
-- <video preload="auto" width="320" height="240" controls>
-    <source src="https://calls.ars.electronica.art/2025/prix/asset/1067264/" type="video/mp4">
-  </video>
+  
+  <iframe width="710" height="399" src="https://www.youtube.com/embed/a0pfoXxqRu0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<br>
+<iframe width="710" height="399" src="https://www.youtube.com/embed/a0pfoXxqRu0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
