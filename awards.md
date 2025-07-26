@@ -19,7 +19,7 @@ title: Awards
 
 - 14th **iCAN** International Innovation<br>*First Prize & Finalist of China Entrepreneurship Competition (Top 10)* · Dec 2020.<br><img title="" src="https://shiyi099.github.io/Billion.github.io/images/awards/iCAN2020.jpg" alt="" data-align="inline">
 
-- **2019 Certificate Authority Cup International Mathematical Contest in Modeling (CAIMCM)**<br>*Outstanding Winner* · Dec 2019.<br>
+- **2019 Certificate Authority Cup International Mathematical Contest in Modeling (CAMCM)**<br>*Outstanding Winner* · Dec 2019.<br>
 
 - **Asia Pacific Mathematical Contest in Modeling (APMCM)** <br>*First Prize, Undergraduate Group* · Nov 2019.<br>
 
