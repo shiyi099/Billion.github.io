@@ -7,7 +7,6 @@ title: Awards
 ## Scholarships
 
 - May 2025：** Scholarship** (totally £190,000 for tuition waiver and stipend)<br>
-- 
 
 ## Competitions
 
