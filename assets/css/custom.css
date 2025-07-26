@@ -1,0 +1,32 @@
+/* 自定义样式文件 */
+
+/* 头像旋转动画效果 */
+.bio-photo {
+    transition: transform 0.6s ease-in-out;
+    border-radius: 50%; /* 确保头像是圆形 */
+}
+
+.bio-photo:hover {
+    transform: rotate(360deg);
+}
+
+/* 可选：添加一些额外的悬停效果 */
+.bio-photo:hover {
+    transform: rotate(360deg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+}
+
+/* 确保动画在离开时平滑恢复 */
+.bio-photo {
+    transition: transform 0.6s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 如果头像在链接中，确保整个链接区域都有效果 */
+a .bio-photo {
+    transition: transform 0.6s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+a:hover .bio-photo {
+    transform: rotate(360deg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+} 
