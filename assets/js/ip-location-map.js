@@ -214,15 +214,42 @@ class IPLocationMap {
 
 // 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', function() {
+    // 尝试从Jekyll配置获取token
+    let token = '{{ site.ipinfo.token }}';
+    
+    // 检查token是否被Jekyll正确处理（不是原始的模板字符串）
+    if (token === '{{ site.ipinfo.token }}') {
+        // 如果token没有被Jekyll处理，尝试从其他地方获取
+        console.warn('Jekyll template variable not processed, trying alternative methods...');
+        
+        // 方法1: 尝试从全局变量获取
+        if (window.IPINFO_TOKEN) {
+            token = window.IPINFO_TOKEN;
+            console.log('Using token from global variable');
+        }
+        // 方法2: 尝试从meta标签获取
+        else {
+            const metaToken = document.querySelector('meta[name="ipinfo-token"]');
+            if (metaToken) {
+                token = metaToken.getAttribute('content');
+                console.log('Using token from meta tag');
+            }
+        }
+    }
+    
     const ipinfoConfig = {
-        token: '{{ site.ipinfo.token }}'
+        token: token
     };
 
-    if (ipinfoConfig.token && ipinfoConfig.token !== '{{ site.ipinfo.token }}') {
+    // 验证token是否有效
+    if (token && token !== '{{ site.ipinfo.token }}' && token.length > 10) {
+        console.log('IPinfo token found, initializing map...');
         setTimeout(() => {
             window.ipLocationMap = new IPLocationMap(ipinfoConfig);
         }, 500);
     } else {
-        console.error('Invalid or missing IPinfo token');
+        console.error('Invalid or missing IPinfo token. Please check your configuration.');
+        console.log('Token value:', token);
+        console.log('Token length:', token ? token.length : 0);
     }
 }); 
