@@ -29,4 +29,86 @@ a .bio-photo {
 a:hover .bio-photo {
     transform: rotate(360deg);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 访问量统计样式 */
+.analytics-display {
+    font-size: 14px;
+    color: #666;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+}
+
+.analytics-display span {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.analytics-display span:hover {
+    background-color: #e9ecef;
+    transition: background-color 0.3s ease;
+}
+
+/* Flag Counter 样式 */
+.flag-counter {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.flag-counter img {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Google Analytics Measurement Protocol 统计样式 */
+.ga-analytics-display {
+    font-size: 14px;
+    color: #333;
+    margin: 15px 0;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    color: white;
+}
+
+.ga-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ga-stats .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ga-stats .stat-item i {
+    font-size: 16px;
+    color: #fff;
+}
+
+.ga-stats .stat-item span {
+    font-weight: 500;
+    color: #fff;
+}
+
+.ga-stats .stat-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
 } 
