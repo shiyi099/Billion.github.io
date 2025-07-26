@@ -110,8 +110,11 @@ class IPLocationMap {
         try {
             this.map = L.map('visitor-map').setView([0, 0], 2);
             
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
+            // 使用深色主题的地图瓦片
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '© OpenStreetMap contributors, © CARTO',
+                subdomains: 'abcd',
+                maxZoom: 19
             }).addTo(this.map);
 
             this.addVisitorMarkers();
@@ -134,7 +137,28 @@ class IPLocationMap {
                         return;
                     }
                     
-                    const marker = L.marker([lat, lng])
+                    // 创建自定义图标
+                    const customIcon = L.divIcon({
+                        className: 'custom-marker',
+                        html: `<div style="
+                            background: linear-gradient(135deg, #333333 0%, #555555 100%);
+                            border: 2px solid #ffffff;
+                            border-radius: 50%;
+                            width: 20px;
+                            height: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: white;
+                            font-size: 10px;
+                            font-weight: bold;
+                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+                        ">${index + 1}</div>`,
+                        iconSize: [20, 20],
+                        iconAnchor: [10, 10]
+                    });
+
+                    const marker = L.marker([lat, lng], { icon: customIcon })
                         .addTo(this.map)
                         .bindPopup(`
                             <div class="visitor-popup">
