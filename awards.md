@@ -11,7 +11,6 @@ title: Awards
 ## Competitions
 
 - Digital Musics & Sound Art, **Prix Ars Electronica** 2025<br><a href="https://calls.ars.electronica.art/2025/prix/winners/17223/" style="text-decoration: none; color: #007acc;" onmouseover="this.style.color='#e91e63'" onmouseout="this.style.color='#007acc'" title="Click to query certificate! [APMCM]"><i>Honorary Mention</i></a> · July 2025.<br>
-  
   <iframe width="710" height="400" src="https://www.youtube.com/embed/a0pfoXxqRu0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   The program "**Into the Red**" was first performed at the ["Future Concert" of the 2024 China-France International Music Festival](https://mp.weixin.qq.com/s/uMAkVmz5-8kGxUyWApQiJg).<br><img title="" src="https://shiyi099.github.io/Billion.github.io/images/awards/IntotheRed.jpg" alt="" data-align="inline">
   It was a great honor and I am deeply grateful to have worked with two esteemed teachers: Composer [**Yixuan Zhao**](https://www.ccom.edu.cn/info/15131/214431.htm) and Double Bassist [**Hanrui Chen**](https://www.ccom.edu.cn/info/14771/211261.htm).<br><img title="" src="https://shiyi099.github.io/Billion.github.io/images/awards/IntotheRedPerformers.jpg" alt="" data-align="inline">
