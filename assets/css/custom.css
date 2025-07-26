@@ -31,87 +31,11 @@ a:hover .bio-photo {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-/* 访问量统计样式 */
-.analytics-display {
-    font-size: 14px;
-    color: #666;
-    margin: 15px 0;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    border: 1px solid #e9ecef;
-}
 
-.analytics-display span {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 5px 10px;
-    background-color: #fff;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
 
-.analytics-display span:hover {
-    background-color: #e9ecef;
-    transition: background-color 0.3s ease;
-}
 
-/* Flag Counter 样式 */
-.flag-counter {
-    margin: 15px 0;
-    text-align: center;
-}
 
-.flag-counter img {
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
 
-/* Google Analytics Measurement Protocol 统计样式 */
-.ga-analytics-display {
-    font-size: 14px;
-    color: #333;
-    margin: 15px 0;
-    padding: 12px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 8px;
-    border: 1px solid #e9ecef;
-    color: white;
-}
-
-.ga-stats {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.ga-stats .stat-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.ga-stats .stat-item i {
-    font-size: 16px;
-    color: #fff;
-}
-
-.ga-stats .stat-item span {
-    font-weight: 500;
-    color: #fff;
-}
-
-.ga-stats .stat-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    transition: all 0.3s ease;
-}
 
 /* 访客分析区域样式 */
 .visitor-analytics-section {
@@ -132,10 +56,10 @@ a:hover .bio-photo {
 }
 
 .visitor-stats {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    justify-items: center;
 }
 
 .visitor-stats .stat-item {
@@ -147,8 +71,9 @@ a:hover .bio-photo {
     border-radius: 6px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    min-width: 120px;
+    min-width: 160px;
     justify-content: center;
+    text-align: center;
 }
 
 .visitor-stats .stat-item i {
@@ -162,45 +87,7 @@ a:hover .bio-photo {
     font-size: 14px;
 }
 
-/* 位置信息显示 */
-.location-display {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    border-radius: 8px;
-    color: #333;
-}
 
-.location-info {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.location-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 15px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 6px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    min-width: 150px;
-    justify-content: center;
-}
-
-.location-item i {
-    font-size: 16px;
-    color: #667eea;
-}
-
-.location-item span {
-    font-weight: 500;
-    color: #333;
-    font-size: 14px;
-}
 
 /* 地图区域样式 */
 .map-section {
@@ -286,21 +173,27 @@ a:hover .bio-photo {
 /* 响应式设计 */
 @media (max-width: 768px) {
     .visitor-stats {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
     
-    .location-info {
-        flex-direction: column;
-        align-items: center;
+    .visitor-stats .stat-item {
+        min-width: 140px;
+        font-size: 12px;
     }
     
     .map-controls {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
     
     .visitor-map-container {
         height: 250px;
+    }
+    
+    .map-btn {
+        width: 100%;
+        max-width: 200px;
     }
 } 
