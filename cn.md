@@ -1,27 +1,31 @@
 ---
 layout: page
+permalink: /cn/index.html
+title: cn
 ---
 
-# About Me
+# 关于我
 
 <img title="" src="https://shiyi099.github.io/Billion.github.io/images/Yi Shi.jpg" alt="" class="floatpic">
 
-Here is **Yi Shi (Billion, 石义)**.<br>
+我叫**石义 (Billion)**.<br>
 
-I have just achieved my Master's degree in the Department of [Music AI and Music Information Technology](https://www.ccom.edu.cn/jgk/jxdw/ylrgznyylxxkjx.htm) at the [Central Conservatory of Music](https://zh.wikipedia.org/wiki/中央音乐学院) in China. My academic interests lie at the intersection of music performance, machine learning, and multimedia technologies.
+近期我已在[中央音乐学院](https://zh.wikipedia.org/wiki/中央音乐学院)的[音乐人工智能与音乐信息科技系](https://www.ccom.edu.cn/jgk/jxdw/ylrgznyylxxkjx.htm)取得了硕士学位。我的研究兴趣主要在音乐表演、多媒体技术、人工智能模型应用的交叉领域。
 
-My recent research focuses on gesture prediction algorithms for bowed string instruments, such as cello and violin, with the aim of improving music education and performance analysis through multimodal learning and interactive systems. I am also exploring topics like spatial audio alignment with camera movement and real-time music generation for audiovisual applications.
+我最近的研究聚焦于弓弦乐器（比如大提琴和小提琴）的指法预测算法，希望通过多模态学习和交互系统，提升音乐教学和表演分析的效率。同时我也在探索一些新的方向，比如空间音频与镜头运动的同步（多媒体方向），以及面向视听应用的实时音乐生成（大语言模型方向）。
 
-With a strong background in both music and technology, I aspire to continue my research in interdisciplinary PhD programs, especially those related to multimodal AI, virtual performance environments, and creative human-computer interaction.If you'd like to connect or chat more about these topics, feel free to reach out: [**shiyi@mail.ccom.edu.cn**](mailto:shiyi@ccom.edu.cn)
+我一直致力于把音乐与科技结合起来，未来也希望在博士阶段继续从事跨学科研究，特别是在多模态人工智能、虚拟表演环境和创新的人机交互等方向。
+
+如果你对这些话题感兴趣，欢迎交流与我联系：[**shiyi@mail.ccom.edu.cn**](mailto:shiyi@ccom.edu.cn)
 
 ---
 
-## Research Interests
+## 研究领域
 
-- Interdisciplinary (AI + Everything)
-- Multimodal
-- Multimedia
-- Music Technology (Music Performance, Digital Avatar, etc...)
+- 跨学科研究 (人工智能 + 万物)
+- 多模态
+- 多媒体
+- 音乐科技（音乐表演分析，数字人等）
 
 ---
 
