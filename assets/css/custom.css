@@ -41,18 +41,20 @@ a:hover .bio-photo {
 .visitor-analytics-section {
     margin: 20px 0;
     padding: 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     border-radius: 12px;
-    border: 1px solid #e1e8ed;
+    border: 1px solid #404040;
+    color: #ffffff;
 }
 
 /* 访客统计显示 */
 .visitor-stats-display {
     margin-bottom: 20px;
     padding: 15px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
     border-radius: 8px;
     color: white;
+    border: 1px solid #333333;
 }
 
 .visitor-stats {
@@ -67,13 +69,21 @@ a:hover .bio-photo {
     align-items: center;
     gap: 8px;
     padding: 10px 15px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 6px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     min-width: 160px;
     justify-content: center;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.visitor-stats .stat-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .visitor-stats .stat-item i {
@@ -97,9 +107,10 @@ a:hover .bio-photo {
 .map-section h4 {
     text-align: center;
     margin-bottom: 15px;
-    color: #333;
+    color: #ffffff;
     font-size: 18px;
     font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .visitor-map-container {
@@ -107,8 +118,9 @@ a:hover .bio-photo {
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 2px solid #e1e8ed;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid #404040;
+    background: #1a1a1a;
 }
 
 /* 地图控制按钮 */
@@ -124,24 +136,32 @@ a:hover .bio-photo {
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #333333 0%, #555555 100%);
     color: white;
-    border: none;
+    border: 1px solid #666666;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .map-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #444444 0%, #666666 100%);
+    border-color: #888888;
 }
 
 .map-btn.clear-btn {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+    border-color: #cc0000;
+}
+
+.map-btn.clear-btn:hover {
+    background: linear-gradient(135deg, #a52a2a 0%, #cc0000 100%);
+    border-color: #ff0000;
 }
 
 .map-btn i {
@@ -152,22 +172,28 @@ a:hover .bio-photo {
 .visitor-popup {
     padding: 10px;
     min-width: 200px;
+    background: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #404040;
+    border-radius: 6px;
 }
 
 .visitor-popup h4 {
     margin: 0 0 10px 0;
-    color: #667eea;
+    color: #ffffff;
     font-size: 16px;
+    border-bottom: 1px solid #404040;
+    padding-bottom: 5px;
 }
 
 .visitor-popup p {
     margin: 5px 0;
     font-size: 12px;
-    color: #666;
+    color: #cccccc;
 }
 
 .visitor-popup strong {
-    color: #333;
+    color: #ffffff;
 }
 
 /* 响应式设计 */
