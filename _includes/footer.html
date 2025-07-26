@@ -4,40 +4,89 @@
   based on the <a href="https://mademistakes.com/" rel="nofollow">Minimal Mistakes</a> theme.
   Source code for this website can be found <a href="https://github.com/GuangLun2000/GuangLun2000.github.io" rel="nofollow">here</a>.
 
-  <!-- Google Analytics Measurement Protocol 统计显示 -->
-  {% if site.ga_measurement_protocol %}
-  <div id="ga-stats-display" class="ga-analytics-display" style="margin-top: 10px; text-align: center;">
-    <div class="ga-stats">
-      <div class="stat-item">
-        <i class="icon-eye"></i>
-        <span>GA页面访问: 加载中...</span>
-      </div>
-      <div class="stat-item">
-        <i class="icon-user"></i>
-        <span>访客ID: 生成中...</span>
+  <!-- 访客统计和位置信息 -->
+  <div class="visitor-analytics-section">
+    
+    <!-- 访客统计 -->
+    {% if site.ipinfo %}
+    <div id="visitor-stats" class="visitor-stats-display">
+      <div class="visitor-stats">
+        <div class="stat-item">
+          <i class="icon-users"></i>
+          <span>总访客: 加载中...</span>
+        </div>
+        <div class="stat-item">
+          <i class="icon-eye"></i>
+          <span>总访问: 加载中...</span>
+        </div>
+        <div class="stat-item">
+          <i class="icon-location"></i>
+          <span>当前IP: 获取中...</span>
+        </div>
       </div>
     </div>
-  </div>
-  {% endif %}
 
-  <!-- 访问量统计显示 -->
-  <div class="analytics-display" style="margin-top: 10px; text-align: center;">
-    <span id="busuanzi_container_site_pv" style="margin-right: 20px;">
-      总访问量: <span id="busuanzi_value_site_pv"></span>
-    </span>
-    <span id="busuanzi_container_site_uv" style="margin-right: 20px;">
-      访客数: <span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_page_pv">
-      本页访问: <span id="busuanzi_value_page_pv"></span>
-    </span>
-  </div>
+    <!-- 当前位置信息 -->
+    <div id="current-location" class="location-display">
+      <div class="location-info">
+        <div class="location-item">
+          <i class="icon-map-marker"></i>
+          <span>位置: 获取中...</span>
+        </div>
+        <div class="location-item">
+          <i class="icon-clock"></i>
+          <span>时区: 获取中...</span>
+        </div>
+        <div class="location-item">
+          <i class="icon-building"></i>
+          <span>组织: 获取中...</span>
+        </div>
+      </div>
+    </div>
 
-  <!-- Flag Counter 访问量地图 -->
-  <div style="margin-top: 10px; text-align: center;">
-    <a href="https://info.flagcounter.com/8F8F">
-      <img src="https://s11.flagcounter.com/count2/8F8F/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter">
-    </a>
+    <!-- 访客地图 -->
+    <div class="map-section">
+      <h4>访客地理分布</h4>
+      <div id="visitor-map" class="visitor-map-container"></div>
+      <div class="map-controls">
+        <button onclick="window.ipLocationMap && window.ipLocationMap.refreshMap()" class="map-btn">
+          <i class="icon-refresh"></i> 刷新地图
+        </button>
+        <button onclick="window.ipLocationMap && window.ipLocationMap.clearData()" class="map-btn clear-btn">
+          <i class="icon-trash"></i> 清除数据
+        </button>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Google Analytics Measurement Protocol 统计显示 -->
+    {% if site.ga_measurement_protocol %}
+    <div id="ga-stats-display" class="ga-analytics-display">
+      <div class="ga-stats">
+        <div class="stat-item">
+          <i class="icon-eye"></i>
+          <span>GA页面访问: 加载中...</span>
+        </div>
+        <div class="stat-item">
+          <i class="icon-user"></i>
+          <span>访客ID: 生成中...</span>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- 不蒜子统计 -->
+    <div class="analytics-display">
+      <span id="busuanzi_container_site_pv">
+        总访问量: <span id="busuanzi_value_site_pv"></span>
+      </span>
+      <span id="busuanzi_container_site_uv">
+        访客数: <span id="busuanzi_value_site_uv"></span>
+      </span>
+      <span id="busuanzi_container_page_pv">
+        本页访问: <span id="busuanzi_value_page_pv"></span>
+      </span>
+    </div>
   </div>
 
   <!-- <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=tGZ_4852x6Mm-PPomoo98e4y_CI8D9TmioGTO03Daik"></script> -->
