@@ -20,7 +20,7 @@ title: Awards
 
 - 14th **iCAN** International Innovation<br>*First Prize & Finalist of China Entrepreneurship Competition (Top 10)* · Dec 2020.<br><img title="" src="https://shiyi099.github.io/Billion.github.io/images/awards/iCAN2020.jpg" alt="" data-align="inline">
 
-- **2019 Certificate Authority Cup International Mathematical Contest in Modeling (CAMCM)**<br><a href="https://shiyi099.github.io/Billion.github.io/includes/CAMCM-query.html" style="text-decoration: none; color: #007acc;" onmouseover="this.style.color='#e91e63'" onmouseout="this.style.color='#007acc'" title="Click to query certificate! [CAMCM]"><i>[Clicked here to query !]</i></a>· Dec 2019.<br>
+- **2019 Certificate Authority Cup International Mathematical Contest in Modeling (CAMCM)**<br><a href="https://shiyi099.github.io/Billion.github.io/includes/CAMCM-query.html" style="text-decoration: none; color: #007acc;" onmouseover="this.style.color='#e91e63'" onmouseout="this.style.color='#007acc'" title="Click to query certificate! [CAMCM]"><i>Outstanding Winner</i></a> · Dec 2019.<br>
 
 - **Asia Pacific Mathematical Contest in Modeling (APMCM)** <br><a href="http://www.apmcm.org/certificate/result/19BDIJQRSZ45" style="text-decoration: none; color: #007acc;" onmouseover="this.style.color='#e91e63'" onmouseout="this.style.color='#007acc'" title="Click to query certificate! [APMCM]"><i>First Prize</i></a>*, (Undergraduate Group)* · Nov 2019.<br>
 
