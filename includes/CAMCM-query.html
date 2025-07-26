@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>自动跳转到证书查询页面</title>
+</head>
+<body>
+  <p>正在跳转到证书查询页面，请稍候...</p>
+
+  <form id="autoForm" action="http://certificate.madio.net/index.php" method="POST">
+    <input type="hidden" name="cid" value="20190301013988">
+    <input type="hidden" name="dosubmit1" value="查询">
+  </form>
+
+  <script>
+    // 自动提交表单
+    document.getElementById("autoForm").submit();
+  </script>
+</body>
+</html>
