@@ -8,30 +8,26 @@ layout: page
 
 Here is **Yi Shi (Billion, 石义)**.<br>
 
-I am a graduate student in the [Internet of Everything Group](https://ioe.eng.cam.ac.uk/) at the University of Cambridge, supervised by [Prof. Ozgur Akan](https://ioe.eng.cam.ac.uk/directory/akan), and funded by the Cambridge Trust a
+I have just achieved my Master's degree in Music Artificial Intelligence and Music Information Technology in the Department of [Music AI and Music Information Technology](https://www.ccom.edu.cn/jgk/jxdw/ylrgznyylxxkjx.htm) at the [Central Conservatory of Music](https://zh.wikipedia.org/wiki/中央音乐学院) in China. My academic interests lie at the intersection of music performance, machine learning, and multimedia technologies.
 
-Prior to Cambridge, I have worked on wireless networks, cybersecurity, and machine learning under the guidance of [Prof. Zhezhuang Xu](https://scholar.google.com.hk/citations?user=iZ7LQRkAAAAJ&hl=zh-CN) and [Dr. Meng Yuan](https://myuan27.github.io/). Besides, I was honored to be selected as an Undergraduate Scholar at the leading conferences AAAI 2024 and SIGKDD 2024.
+My recent research focuses on gesture prediction algorithms for bowed string instruments, such as cello and violin, with the aim of improving music education and performance analysis through multimodal learning and interactive systems. I am also exploring topics like spatial audio alignment with camera movement and real-time music generation for audiovisual applications.
 
-If you are interested in any aspect of me, I am always open to discussions and collaborations. Feel free to reach out to me at — **hc663 [at] cam.ac.uk**
+With a strong background in both music and technology, I aspire to continue my research in interdisciplinary PhD programs, especially those related to multimodal AI, virtual performance environments, and creative human-computer interaction.If you'd like to connect or chat more about these topics, feel free to reach out: [**shiyi@mail.ccom.edu.cn**](mailto:shiyi@ccom.edu.cn)
 
 ---
 
 ## Research Interests
 
-- [Internet of Everything](https://scholar.google.com/citations?view_op=search_authors&hl=zh-CN&mauthors=label:internet_of_everything)
-- Wireless Communication
-- Semantic Communication
-- LLM for Networking
+- Interdisciplinary (AI + Everything)
+- Multimodal
+- Multimedia
+- Music Technology (Music Performance, Digital Avatar, etc...)
 
 ---
 
 ## News and Updates
 
-- **May 2025**：Delighted to be selected as a winner of the 2025 Cambridge-CSC Scholarship!
-- **June 2024**：Very excited to be selected as [KDD UC Scholar](https://kdd2024.kdd.org/undergraduate-consortium/). See you in Spain!
-- **April 2024：**Our work *BLEGuard* has been accepted to [MobiSys 2024](https://www.sigmobile.org/mobisys/2024/) as a poster paper. See you in Japan!
-- **March 2024：**Happy to receive a MPhil offer from Department of Engineering at Cambridge!
-- **Dec 2023：**Very excited to be selected as [AAAI UC Scholar](https://aaai.org/aaai-conference/undergraduate-consortium-program/). See you in Canada!
+- 
 
 <br>
 
