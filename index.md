@@ -25,7 +25,7 @@ With a strong background in both music and technology, I aspire to continue my r
 
 ---
 
-<!-->
+<!--
 ## News and Updates
 
 - <br>
